@@ -1,0 +1,29 @@
+<ion-header style="font-weight: bold;font-size: 20px;text-align: center;">
+  Login
+</ion-header>
+
+<ion-content>
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+  
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <img src="../../../assets/avatar.svg" id="icon" alt="User Icon"  height="150px"/>
+      </div>
+  
+      <!-- Login Form -->
+      <form #productForm="ngForm" >
+        <input type="text" id="login"  maxlength="10" minlength="10" pattern="[0-9]+"  class="fadeIn second" [(ngModel)]="elementos.cedula" name="cedula" placeholder="Cedula" required>
+        <input type="password" id="password" class="fadeIn third"  [(ngModel)]="elementos.pass" name="pass" placeholder="Contraseña" required>
+        <input type="submit" class="fadeIn fourth" (click)="login(productForm)" value="Iniciar Sesion">
+      </form>
+  
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <a class="underlineHover" (click)="registrarse()">Registrarse?</a>
+      </div>
+  
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Consultar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="--background:#d7d8da; ">
+  <ion-grid>
+    <ion-row>
+       <ion-col size="12">
+         <ion-row>
+           <ion-col size="4"  >
+            <ion-item style="width: 100%;height: 83%;margin-top: 1%;">
+              <ion-label >Buscar por:</ion-label>
+              <ion-select  style="--padding-start:	0;" (ionChange)="onInput2()" [(ngModel)]="elementos.tipob" okText="Ok" cancelText="Cancelar">
+                <ion-select-option disabled selected>Buscar por:</ion-select-option>
+                <ion-select-option value="codigo">Codigo</ion-select-option>
+                <ion-select-option value="name">Nombre</ion-select-option>
+                <ion-select-option value="precio">Precio</ion-select-option>
+                <ion-select-option value="tipoh">Tipo de Herramienta</ion-select-option>
+              </ion-select>
+            </ion-item>
+           </ion-col>
+
+           <ion-col size="8" style="padding: 0;">
+            <ion-searchbar (ionInput)="onInput($event)"  placeholder="Buscar" [(ngModel)]="elementos.bus" ></ion-searchbar>
+          </ion-col>
+
+         </ion-row>
+          
+       </ion-col>
+
+        
+      
+      <ion-col size="4"  style="border-radius: 25px;" *ngFor="let pro of products;">
+        <ion-card style="width: 100%;height: 100%;" >
+          <img src= "{{pro.foto}}" width="100%" height="150px">
+          <ion-card-header>
+            <ion-card-title>
+            {{pro.codigo}}  --  {{pro.name}}
+          </ion-card-title>
+            <ion-card-subtitle>
+              <div>
+                {{pro.tipodeherr}}  
+              </div>
+              <div>
+                Captidad={{pro.cantidad}}
+              </div>
+              <div>
+                 Precio  = ${{pro.precio}} 
+              </div>
+              
+            </ion-card-subtitle>
+            
+          </ion-card-header>
+          <ion-card-content >
+            {{pro.descripcion}}
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

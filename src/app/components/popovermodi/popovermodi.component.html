@@ -1,0 +1,130 @@
+<ion-header style="font-weight: bold;font-size: 20px;text-align: center;">
+  Modificar
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row style="justify-content: center;">
+      
+      
+      <ion-col size="6" >
+      
+        <div class="card-body" style="border: #d7d8da 1px solid;">
+          
+        <form #productForm2="ngForm" >
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label >Codigo</label>
+                <input type="text" disabled required name="codigo" [(ngModel)]="elementos.codigo" class="form-control"  >
+              </div>
+            </div>
+            
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label >Nombre</label>
+                <input type="text" required name="nombre" [(ngModel)]="elementos.nombre" class="form-control"  >
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label >Tipo de Herramientas</label>
+                <select required name="tipo" [(ngModel)]="elementos.tipo" class="form-control">
+                  <option disabled selected>Seleccione</option>
+                  <option value="Herramientas de medida">Herramientas de medida</option>
+                  <option value="Herramientas de trazado">Herramientas de trazado</option>
+                  <option value="Herramientas de corte">Herramientas de corte</option>
+                  <option value="Herramientas para serrar">Herramientas para serrar</option>
+                  <option value="Herramientas para rebajar">Herramientas para rebajar</option>
+                  <option value="Herramientas de taladrado">Herramientas de taladrado</option>
+                  <option value="Herramientas de golpeo">Herramientas de golpeo</option>
+                  <option value="Herramientas de construccion">Herramientas de construcción</option>
+                  <option value="Herramientas de union">Herramientas de unión</option>
+                  <option value="Herramientas para atornillar">Herramientas para atornillar</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label >Precio</label>
+                <input type="number" required name="precio" [(ngModel)]="elementos.precio" class="form-control"  >
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label >Cantidad</label>
+                <input type="number" required name="cantidad" [(ngModel)]="elementos.cantidad" class="form-control"  >
+              </div>
+            </div>
+          </div>
+
+          
+        </form>
+
+        </div>
+      </ion-col>
+
+      <ion-col size="6" >
+      
+        <div class="card-body" style="border: #d7d8da 1px solid;">
+          
+        <form #productForm="ngForm" >
+        
+
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label >Fabricante</label>
+                <input type="text" required name="fabricante" [(ngModel)]="elementos.fabricante"  class="form-control"  >
+              </div>
+            </div>
+            
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label >Foto : {{elementos.nombrefoto}}</label>
+                  <input type="file" name="formato"   [(ngModel)]="elementos.formato" (change)="cargaArchivo($event.target)"   class="form-control-file">
+              </div>
+            </div>
+          </div>
+         
+          
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label >Descripcion</label>
+                <textarea class="form-control"  required name="descripcion" [(ngModel)]="elementos.descripcion" id="exampleFormControlTextarea1" rows="5"></textarea>              </div>
+            </div>
+          </div>
+
+
+        </form>
+
+        </div>
+      </ion-col>
+
+
+     
+    </ion-row>
+    <ion-row > 
+      <ion-col size="12" style="margin-top: 5px;" >
+        <div class="text-right">
+          <button type="button" (click)="Modificar(productForm,productForm2)"   class="btn btn-primary buto">Modificar</button>
+      </div>
+      </ion-col>
+      
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
